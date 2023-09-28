@@ -1,0 +1,177 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: 'Courier New', Courier, monospace;
+	margin: 10px 80px;
+	/* background-color: #33FFB5; */
+}
+
+a {
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* .logo img{
+			border: 2px solid red;
+        } */
+.logo-name {
+	color: orangered;
+	font-size: 24px;
+}
+
+.nav-items {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	/* border: 2px solid red; */
+}
+
+.land {
+	background: url(./images/Homepage-Banner-Bg-5.jpg);
+	height: 75vh;
+	background-position: center;
+	background-size: cover;
+	margin: 20px 0;
+	color: #0cf5f5;
+}
+.land-text {
+	/* border: 2px solid red; */
+}
+
+.land-text p {
+	color: #fbff00;
+	font-size: 16px;
+}
+
+.land-text span {
+	color: orangered;
+}
+
+.land-text a {
+	text-decoration: none;
+}
+.land-text .shop-now {
+	text-align: center;
+}
+.title{
+	line-height: 20px;
+}
+.title a{
+	text-decoration: none;
+}
+section h1 {
+	text-align: center;
+	font-size: 31px;
+}
+
+.index-section {
+	margin: 40px 0;
+}
+
+.book-sec {
+	padding: 20px 0;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-row-gap: 60px;
+	margin: 30px 90px;
+}
+
+.card-cont {
+	margin: auto;
+	/* border: 2px solid red; */
+	width: 300px;
+	box-shadow: 0px 0px 10px 3px;
+}
+
+.card-cont a {
+	color: #ff0095;
+}
+.card-des {
+	padding: 10px;
+	line-height: 15px;
+	/* border: 2px solid red; */
+}
+footer a{
+	text-decoration: none;
+}
+/* Dropdown Button */
+.dropbtn {
+	border-radius: 8px;
+	min-width: 160px;
+	padding: 10px 0;
+	font-size: 18px;
+	border: none;
+	cursor: pointer;
+}
+
+.dropbtn:active, .dropbtn:focus {
+	border-radius: 8px 8px 0 0;
+}
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+	background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	border-radius: 0 0 8px 8px;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: #878787;
+	font-weight: 500;
+	font-size: 19px;
+	padding: 12px 16px;
+	display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+	display: block;
+}
+
+.my-profile {
+	margin: 20px;
+	background-color: #b6f1b6;
+}
+
+.my-profile-con {
+	text-align: center;
+	/* border: 1px solid red; */
+	box-shadow: 0 0 5px 5px black;
+	width: fit-content;
+	padding: 20px 40px;
+	margin: auto;
+}
+
+.profile-deatils p {
+	font-size: 18px;
+	font-weight: 700;
+	color: #7807fa;
+	padding: 10px;
+	/* border-bottom: 1px solid red; */
+}
+
+.edit-button {
+	background-color: blue;
+	padding: 5px;
+	border-radius: 8px;
+}
