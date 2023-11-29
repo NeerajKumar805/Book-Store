@@ -22,6 +22,9 @@ public class DeleteServlet extends HttpServlet {
         PrintWriter pw = res.getWriter();
         //set content type
         res.setContentType("text/html");
+        pw.println("<link rel=\"stylesheet\" href=\"bootstrap/css/bootstrap.min.css\">");
+        pw.println("<body class='bg-info'>");
+        pw.println("<div class='w-25 card text-center text-success p-5 m-auto mt-5'>");
         //get the id of record
         int id = Integer.parseInt(req.getParameter("id"));
 
@@ -32,16 +35,15 @@ public class DeleteServlet extends HttpServlet {
             cnf.printStackTrace();
         }
         //generate the connection
-        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookReg", "root", "root"); PreparedStatement ps = con.prepareStatement(query);) {
+        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookStore", "root", "root"); PreparedStatement ps = con.prepareStatement(query);) {
             ps.setInt(1, id);
             int count = ps.executeUpdate();
             pw.println("<body bgcolor=#b6f1b6>");
             if (count == 1) {
-                pw.println("<h2>Record is Deleted Successfully</h2>");
+                pw.println("<h5>Deleted Successfully...</h5>");
             } else {
-                pw.println("<h2>Record is not deleted Successfully</h2>");
+                pw.println("<h5>Oops, Something went wrong!!!</h5>");
             }
-            pw.print("/body");
         } catch (SQLException se) {
             se.printStackTrace();
             pw.println("<h1>" + se.getMessage() + "</h2>");
@@ -49,9 +51,12 @@ public class DeleteServlet extends HttpServlet {
             e.printStackTrace();
             pw.println("<h1>" + e.getMessage() + "</h2>");
         }
-        pw.println("<a href='home.html'>Home</a>");
-        pw.println("<br>");
-        pw.println("<a href='booklist'>Book List</a>");
+        pw.println("<div class='d-flex justify-content-center gap-5 mt-3'>");
+        pw.println("<a href='booklist'><button class='btn btn-outline-primary'>Book list</button></a>");
+        pw.println("<a href='existinguser.jsp'><button class='btn btn-outline-danger'>Home</button></a>");
+        pw.println("</div>");
+        pw.println("</div>");
+        pw.println("</body>");
 
     }
     @Override

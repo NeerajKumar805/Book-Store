@@ -22,6 +22,9 @@ public class RegServlet extends HttpServlet {
         PrintWriter pw = res.getWriter();
         //set content type
         res.setContentType("text/html");
+        pw.println("<link rel=\"stylesheet\" href=\"bootstrap/css/bootstrap.min.css\">");
+        pw.println("<body class='bg-info'>");
+        pw.println("<div class='w-25 card text-center text-success p-5 m-auto mt-5'>");
         //GET THE book info
         
         String bookName = req.getParameter("bookName");
@@ -29,16 +32,16 @@ public class RegServlet extends HttpServlet {
         float bookPrice = Float.parseFloat(req.getParameter("bookPrice"));
         
         //generate the connection
-        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookReg", "root", "root");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookStore", "root", "root");
         	PreparedStatement ps = con.prepareStatement(query);) {
             	ps.setString(1, bookName);
                 ps.setString(2, bookEdition);
                 ps.setFloat(3, bookPrice);
             int count = ps.executeUpdate();
             if (count == 1) {
-                pw.println("<h2>Record Is Registered Sucessfully</h2>");
+                pw.println("<h6>Book inserted Sucessfully...</h6>");
             } else {
-                pw.println("<h2>Record not Registered Sucessfully</h2>");
+                pw.println("<h5>Oops, Something went wrong!!!</h5>");
             }
         } catch (SQLException se) {
             se.printStackTrace();
@@ -47,9 +50,12 @@ public class RegServlet extends HttpServlet {
             e.printStackTrace();
             pw.println("<h2>" + e.getMessage() + "</h2>");
         }
-        pw.println("<a href='home.html'>Home</a>");
-        pw.println("<br>");
-        pw.println("<a href='bookList'>Book List</a>");
+        pw.println("<div class='d-flex justify-content-center gap-5 mt-3'>");
+        pw.println("<a href='booklist'><button class='btn btn-outline-primary'>Book list</button></a>");
+        pw.println("<a href='existinguser.jsp'><button class='btn btn-outline-danger'>Home</button></a>");
+        pw.println("</div>");
+        pw.println("</div>");
+        pw.println("</body>");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

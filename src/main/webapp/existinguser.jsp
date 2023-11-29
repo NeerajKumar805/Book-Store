@@ -30,11 +30,13 @@
         <div class="nav-items">
             <div class="dropdown">
                 <!-- <button onclick="myFunction()" class="dropbtn">Hey, <%=session.getAttribute("yourname")%></button> -->
-                <button onclick="myFunction()" class="dropbtn bg-primary text-white h5">Hey, <%=session.getAttribute("yourname") %></button>
+                
+                <button onclick="myFunction()" class="dropbtn bg-primary text-white h5 ps-3 pe-3">Hey, <%=session.getAttribute("yourname") %></button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="useraccount"class="text-decoration-none">My Account</a>
-                    
-                    <a href="logout"class="text-decoration-none">Log Out</a>
+                    <a href="useraccount" class="text-decoration-none">My Account</a>
+                    <a href="booklist" class="text-decoration-none">Book List</a>
+                				<a href="addbook.jsp" class="text-decoration-none">Add Book</a>
+                    <a href="logout" class="text-decoration-none">Log Out</a>
                 </div>
             </div>
         </div>

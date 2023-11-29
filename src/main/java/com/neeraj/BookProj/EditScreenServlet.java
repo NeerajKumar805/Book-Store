@@ -26,7 +26,7 @@ public class EditScreenServlet extends HttpServlet {
         //get the id of record
         int id = Integer.parseInt(req.getParameter("id"));
         //generate the connection
-        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookReg", "root", "root"); 
+        try (Connection con = DriverManager.getConnection("jdbc:mysql:///bookStore", "root", "root"); 
         	PreparedStatement ps = con.prepareStatement(query);) {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -59,7 +59,7 @@ public class EditScreenServlet extends HttpServlet {
             e.printStackTrace();
             pw.println("<h1>" + e.getMessage() + "</h2>");
         }
-        pw.println("<a href='home.html'>Home</a>");
+        pw.println("<a href='existinguser.html'>Home</a>");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {

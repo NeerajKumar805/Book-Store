@@ -27,6 +27,8 @@ public class UserAccount extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
     	HttpSession session = req.getSession();
         //get PrintWriter
+    	if(session.getAttribute("yourname")==null)
+    		res.sendRedirect("index.jsp");
         PrintWriter pw = res.getWriter();
         //set content type
         res.setContentType("text/html");
